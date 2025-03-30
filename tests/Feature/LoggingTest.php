@@ -22,4 +22,10 @@ class LoggingTest extends TestCase
 
         self::assertTrue(true);
     }
+
+    public function testContext(): void{
+        Log::info("Hello Info", ['context' => ['user' => 'hendy']]);
+        Log::warning("Hello Warning", ['context' => ['user' => 'hendy']]);
+        self::assertTrue(true);
+    }
 }
