@@ -35,4 +35,16 @@ class LoggingTest extends TestCase
         Log::warning("Hello Warning");
         self::assertTrue(true);
     }
+
+    /**
+     * @test
+     */
+    public function testLogChannel(): void{
+        $logSdrr = Log::channel("single");
+        $logSdrr->info("Hello Info");
+        $logSdrr->warning("Hello Warning");
+        $logSdrr->error("Hello Error");
+        Log::info("Hello Info to default channel");
+        self::assertTrue(true);
+    }
 }
