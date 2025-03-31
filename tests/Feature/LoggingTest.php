@@ -47,4 +47,13 @@ class LoggingTest extends TestCase
         Log::info("Hello Info to default channel");
         self::assertTrue(true);
     }
+
+    public function testFileHandler(): void{
+        $logFile = Log::channel("file_application");
+        $logFile->info("Hello Info");
+        $logFile->warning("Hello Warning");
+        $logFile->error("Hello Error");
+        Log::info("Hello Info to default channel");
+        self::assertTrue(true);
+    }
 }
